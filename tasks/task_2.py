@@ -8,6 +8,3 @@ for i in numbers:
         break
     if i % 5 == 0:
         print(i)
-
-
-
