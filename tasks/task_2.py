@@ -6,7 +6,7 @@ for i in numbers:
     # Давайте улучшим, чтобы было if, elif и elif
     if 150 < i < 500:
         continue
-    if i >= 500:
+    elif i >= 500:
         break
-    if i % 5 == 0:
+    elif i % 5 == 0:
         print(i)
