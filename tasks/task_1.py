@@ -4,4 +4,9 @@ data_types = [
     [21, 49], {"name": 'Micky', "age": 17}
 ]
 
-# TODO: Пожалуйста, добавьте свой код ниже с комментариями и понятными названиями переменных.
+for i in data_types:
+    if type(i) == float:
+        continue
+    elif type(i) == str:
+        continue
+    print("Элемент:", i, "Тип:", type(i))
