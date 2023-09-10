@@ -12,6 +12,7 @@ for i in data_types:
     print("Элемент:", i, "Тип:", type(i))
 
 # -------------------------
+# https://github.com/Darkwell005/topic_3
 
 # Цикл
 # в теле цикла if
