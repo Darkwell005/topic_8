@@ -2,7 +2,7 @@ print("Добро пожаловать в игру \"Камень-Ножницы
 
 player_1_name = input("Игрок 1, введите свое имя: ")
 player_2_name = input("Игрок 2, введите свое имя: ")
-variable = ["ножницы", "бумага", "камень"]
+
 
 congratulatory_message = "Поздравляем! Победитель -"
 
@@ -15,7 +15,10 @@ while True:
         print(congratulatory_message, player_1_name + "!")
     elif player_2_ans == "камень" and player_1_ans == "ножницы":
         print(congratulatory_message, player_2_name + "!")
-
+        ext = input("Хотите сыграть еще раз? (да/нет): ")
+        if ext == "нет":
+            print("До встречи!")
+            break
     elif player_1_ans == "камень" and player_2_ans == "бумага":
         print(congratulatory_message, player_2_name + "!")
     elif player_2_ans == "камень" and player_1_ans == "бумага":
@@ -26,18 +29,19 @@ while True:
     elif player_2_ans == "ножницы" and player_1_ans == "бумага":
         print(congratulatory_message, player_2_name + "!")
 
-    # 1.variable[0 or 1 or 2] - это некорректный код, необходимо исправить.
-    elif player_1_ans != variable[0 or 1 or 2] \
-            and player_2_ans != variable[0 or 1 or 2]:
+    elif player_1_ans != ("бумага" or "ножницы" or "камень") and\
+            player_2_ans != ("бумага" or "ножницы" or "камень"):
         print("ПРЕДУПРЕЖДЕНИЕ: Пожалуйста соблюдайте"
               " правила игры. Начнем игру заново!")
-    elif player_1_ans != variable[0 or 1 or 2]:
+    elif player_1_ans != "бумага" or "ножницы" or "камень"\
+            and player_2_ans == "бумага" or "ножницы" or "камень":
         print(player_1_name, "соблюдайте правила игры."
                              " Начнем игру заново!")
-    elif player_2_ans != variable[0 or 1 or 2]:
+    elif player_2_ans != "бумага" or "ножницы" or "камень"\
+            and player_1_ans == "бумага" or "ножницы" or "камень":
         print(player_2_name, "соблюдайте правила игры."
                              " Начнем игру заново!")
-    # 2.Можно ли здесь улучшить?
+    # 2. Можно ли здесь улучшить?
     # Как-то не красиво, одно и то же повторяете 3 раза.
     elif player_1_ans == "бумага" and player_2_ans == "бумага":
         print("Ничья! Продолжайте играть")
@@ -47,12 +51,6 @@ while True:
     elif player_1_ans == "ножницы" and player_2_ans == "ножницы":
         print("Ничья! Продолжайте играть")
 
-    ext = input("Хотите сыграть еще раз? (да/нет): ")
-    if ext == "нет":
-        print("До встречи!")
-        break
-
-# Test data
 """
 Анна
 Макс
