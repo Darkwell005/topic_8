@@ -15,6 +15,8 @@ while True:
         print(congratulatory_message, player_1_name + "!")
     elif player_2_ans == "камень" and player_1_ans == "ножницы":
         print(congratulatory_message, player_2_name + "!")
+        # в прошлой версии это правильно было реализовано,
+        # значем сюда перенесли?
         ext = input("Хотите сыграть еще раз? (да/нет): ")
         if ext == "нет":
             print("До встречи!")
@@ -29,6 +31,12 @@ while True:
     elif player_2_ans == "ножницы" and player_1_ans == "бумага":
         print(congratulatory_message, player_2_name + "!")
 
+    # player_1_ans != ("бумага" or "ножницы" or "камень")
+    # Это неправильная проверка, если Вы хотите сделать такую проверку,
+    # она должна быть для каждого варианта отдельно:
+    # (player_1_ans != "бумага"
+    # or player_1_ans !=  "ножницы"
+    # or player_1_ans != "камень")
     elif player_1_ans != ("бумага" or "ножницы" or "камень") and\
             player_2_ans != ("бумага" or "ножницы" or "камень"):
         print("ПРЕДУПРЕЖДЕНИЕ: Пожалуйста соблюдайте"
