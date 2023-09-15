@@ -2,7 +2,7 @@ print("Добро пожаловать в игру \"Камень-Ножницы
 
 player_1_name = input("Игрок 1, введите свое имя: ")
 player_2_name = input("Игрок 2, введите свое имя: ")
-
+variables = ["камень", "ножницы", "бумага"]
 
 congratulatory_message = "Поздравляем! Победитель -"
 
@@ -15,12 +15,6 @@ while True:
         print(congratulatory_message, player_1_name + "!")
     elif player_2_ans == "камень" and player_1_ans == "ножницы":
         print(congratulatory_message, player_2_name + "!")
-        # в прошлой версии это правильно было реализовано,
-        # значем сюда перенесли?
-        ext = input("Хотите сыграть еще раз? (да/нет): ")
-        if ext == "нет":
-            print("До встречи!")
-            break
     elif player_1_ans == "камень" and player_2_ans == "бумага":
         print(congratulatory_message, player_2_name + "!")
     elif player_2_ans == "камень" and player_1_ans == "бумага":
@@ -31,52 +25,21 @@ while True:
     elif player_2_ans == "ножницы" and player_1_ans == "бумага":
         print(congratulatory_message, player_2_name + "!")
 
-    # player_1_ans != ("бумага" or "ножницы" or "камень")
-    # Это неправильная проверка, если Вы хотите сделать такую проверку,
-    # она должна быть для каждого варианта отдельно:
-    # (player_1_ans != "бумага"
-    # or player_1_ans !=  "ножницы"
-    # or player_1_ans != "камень")
-    elif player_1_ans != ("бумага" or "ножницы" or "камень") and\
-            player_2_ans != ("бумага" or "ножницы" or "камень"):
+    elif player_1_ans not in variables and\
+            player_2_ans not in variables:
         print("ПРЕДУПРЕЖДЕНИЕ: Пожалуйста соблюдайте"
               " правила игры. Начнем игру заново!")
-    elif player_1_ans != "бумага" or "ножницы" or "камень"\
-            and player_2_ans == "бумага" or "ножницы" or "камень":
+    elif player_1_ans not in variables:
         print(player_1_name, "соблюдайте правила игры."
                              " Начнем игру заново!")
-    elif player_2_ans != "бумага" or "ножницы" or "камень"\
-            and player_1_ans == "бумага" or "ножницы" or "камень":
+    elif player_2_ans not in variables:
         print(player_2_name, "соблюдайте правила игры."
                              " Начнем игру заново!")
-    # 2. Можно ли здесь улучшить?
-    # Как-то не красиво, одно и то же повторяете 3 раза.
-    elif player_1_ans == "бумага" and player_2_ans == "бумага":
-        print("Ничья! Продолжайте играть")
 
-    elif player_1_ans == "камень" and player_2_ans == "камень":
+    elif player_1_ans == player_2_ans:
         print("Ничья! Продолжайте играть")
-    elif player_1_ans == "ножницы" and player_2_ans == "ножницы":
-        print("Ничья! Продолжайте играть")
-
-"""
-Анна
-Макс
-бумага
-камень
-да
-камень
-камень
-бумага
-ножницы
-да
-ок
-кулак
-ок
-кулак
-камень
-кулак
-ножницы
-бумага
-нет
-"""
+    if player_1_ans in variables and player_2_ans in variables:
+        ext = input("Хотите сыграть еще раз? (да/нет): ")
+        if ext == "нет":
+            print("До встречи!")
+            break
