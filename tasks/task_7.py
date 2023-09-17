@@ -37,7 +37,8 @@ while True:
     elif player_1_ans == player_2_ans:
         print("Ничья! Продолжайте играть")
 
-    if player_1_ans in variables and player_2_ans in variables:
+    elif ((player_1_ans in variables) and (player_2_ans in variables)
+          or player_2_ans == player_1_ans):
         ext = input("Хотите сыграть еще раз? (да/нет): ")
         if ext == "нет":
             print("До встречи!")
@@ -61,3 +62,5 @@ while True:
 Ничья! Продолжайте играть
 Хотите сыграть еще раз? (да/нет): 
 """
+
+
