@@ -1,6 +1,6 @@
-n = int(input())
+n: int = int(input())
 
-summa = 0
+summa: int = 0
 for i in range(1, n + 1):
     summa += i
     if summa > 100:
