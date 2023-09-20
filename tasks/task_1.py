@@ -5,6 +5,8 @@ data_types: list = [
 ]
 
 for i in data_types:
+    # здесь нужно использовать isinstance(),
+    # тогда у Вас не будет оператора сравнения ==
     if type(i) == float:
         continue
     elif type(i) == str:
