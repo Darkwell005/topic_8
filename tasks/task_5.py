@@ -1,1 +1,8 @@
-# 1 2 3 4 5 6 7 8 9 10 11 12 13
+n = int(input())
+num = 1
+for n in range(1, n + 1):
+    while num > 0:
+        if num % n == 0:
+            num += 1
+            print(num)
+
