@@ -1,23 +1,20 @@
 onset = int(input("Введите начало диапазона: "))
 end = int(input("Введите конец диапазона: "))
 
-# Нельзя так сравнить сразу две переменны,
-# каждая должна проверяться по отельности
-if (onset or end) < 0:  # Повторяете ошибку!
-
-    # После того, как исправите ошибки выше -
-    # Эти два условия (if и elif) можно написать в одном if
+if (onset < 0) or (end < 0) or (onset == end):
     print("Некорректный диапазон")
-elif onset == end:
-    print("Некорректный диапазон")
-
-# Ошибка, этот цикл всегда будет работать, даже при некорретных значениях
-for i in range(onset, end + 1):
-    for j in range(2, int(i ** 0.5)):
-        if i % j == 0:
-            print(j)
-            break
-
+elif onset < end:
+    for i in range(onset, end + 1):
+        for j in range(2, int(i ** 0.5)):
+            if i % j == 0:
+                print()
+                break
+elif end > onset:
+    for i in range(end, onset + 1):
+        for j in range(2, int(i ** 0.5)):
+            if i % j == 0:
+                print()
+                break
 # Также не забывайте про:
 # "Если начало диапазона больше конца:
 # необходимо изменить порядок и идти от меньшего числа к большему;"
