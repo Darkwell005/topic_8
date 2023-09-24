@@ -19,3 +19,5 @@ for i in data_types:
 # Цикл
 # в теле цикла if
 # в теле if print
+
+# TODO: Необходимо решить через isinstance()

@@ -1,20 +1,21 @@
-n = int(input())
+n: int = int(input())
 
-num = n
+num: int = n
 while True:
-
-    # Проверяем, делится ли число на все числа от 1 до n без остатка
-    for x in range(1, n + 1):  # Нельзя давать одинаковые имена переменным,
-        # у Вас уже есть n, зачем Вы назвали переменную цикла n-ом?
+    for x in range(1, n + 1):
         if num % x != 0:
             break
-            factorial = 1
-            while n > 1:
-                factorial *= n
-                n -= 1
+    else:
+        print(num)
+        break
 
-            print(factorial)
+    num += n
 
-            # Это должно быть выведено, если цикл завершился
-            # естественным образом.
+    factorial: int = 1
+    n_copy: int = n
+    while n_copy > 1:
+        factorial *= n_copy
+        n_copy -= 1
 
+    if num > factorial:
+        break
