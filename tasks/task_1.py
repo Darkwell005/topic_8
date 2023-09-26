@@ -5,19 +5,9 @@ data_types: list = [
 ]
 
 for i in data_types:
-    # здесь нужно использовать isinstance(),
-    # тогда у Вас не будет оператора сравнения ==
-    if type(i) == float:
+    if isinstance(i, float):
         continue
-    elif type(i) == str:
+    elif isinstance(i, str):
         continue
     print("Элемент:", i, "Тип:", type(i))
 
-# -------------------------
-# https://github.com/Darkwell005/topic_3
-
-# Цикл
-# в теле цикла if
-# в теле if print
-
-# TODO: Необходимо решить через isinstance()

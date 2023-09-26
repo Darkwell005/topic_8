@@ -9,5 +9,7 @@ while True:
 
     if negative_count == 3:
         break
-
+    elif num > 0:
+        positive_sum += num
 print(negative_sum)
+print(positive_sum)
