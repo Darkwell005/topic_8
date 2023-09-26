@@ -5,9 +5,6 @@ data_types: list = [
 ]
 
 for i in data_types:
-    if isinstance(i, float):
-        continue
-    elif isinstance(i, str):
+    if isinstance(i, float) or isinstance(i, str):
         continue
     print("Элемент:", i, "Тип:", type(i))
-
