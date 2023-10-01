@@ -19,15 +19,13 @@ for i in data_types:
     print("Элемент:", i, "Тип:", type(i))
 
 # ---------------- №2 ----------------
-
 for item in data_types:
-    # Можно сразу кортеж типов передать в isinstance()
     if isinstance(item, (float, str)):
         continue
     print("Элемент:", item, "Тип:", type(item))
 
-# Лучше так
 # ---------------- №3 ----------------
 for item in data_types:
+    # if isinstance(item, (float, str)) == False:
     if not isinstance(item, (float, str)):
         print("Элемент:", item, "Тип:", type(item))

@@ -1,9 +1,9 @@
 negative_count: int = 0
 negative_sum: int = 0
 positive_sum: int = 0
-
 while True:
-    num = int(input())
+    num: int = int(input())
+
     if num < 0:
         negative_count += 1
         negative_sum += num
